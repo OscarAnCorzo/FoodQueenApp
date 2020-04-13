@@ -26,29 +26,24 @@ import {
 import { Appbar, ToggleButton, Button } from 'react-native-paper';
 import EncaGeneral from './vistas/encaGeneral';
 import Login from './vistas/login';
+import Inicio from './vistas/inicio';
 
 const App = () => {
-  return (
+  return(
     <>
       <StatusBar barStyle="dark-content" />
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.scrollView}>
-        {/* encabezado*/}
-        <EncaGeneral/>
-        {/* cuerpo */}
-        <View style={styles.body}>
-          <Login/>
-        </View>
+      {/* encabezado*/}
+      <EncaGeneral/>
+      {/* cuerpo */}
+      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.body}>
+        <Inicio/>
       </ScrollView>
     </>
   );
 };
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: 'white'
-  },
   body: {
-    backgroundColor: 'green',
-    paddingTop:15
+    backgroundColor: 'white',
   },
 });
 

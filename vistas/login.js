@@ -4,18 +4,16 @@ import { StyleSheet,View,Text } from 'react-native';
 
 export default class Login extends React.Component {
    render() {
-     return (
+      return (
         <>
-         <View>
-            <Appbar style={styles.bottom}>
-               <Appbar.Action icon="archive" onPress={() => console.log('Pressed archive')} />
-               <Appbar.Action icon="email" onPress={() => console.log('Pressed mail')} />
-               <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
-               <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} />
-            </Appbar>
-         </View>
+         <Appbar style={styles.bottom}>
+            <Appbar.Action icon="archive" onPress={() => console.log('Pressed archive')} />
+            <Appbar.Action icon="email" onPress={() => console.log('Pressed mail')} />
+            <Appbar.Action icon="label" onPress={() => console.log('Pressed label')} />
+            <Appbar.Action icon="delete" onPress={() => console.log('Pressed delete')} />
+         </Appbar>
        </>
-     );
+      );
    }
 }
 
@@ -25,6 +23,6 @@ const styles = StyleSheet.create({
       position: 'absolute',
       left: 0,
       right: 0,
-      bottom: -50,
+      bottom: 0,
    },
  });
