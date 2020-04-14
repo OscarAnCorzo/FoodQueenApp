@@ -20,7 +20,6 @@ export default class Login extends React.Component {
 const styles = StyleSheet.create({
    bottom: {
       backgroundColor:'red',
-      position: 'absolute',
       left: 0,
       right: 0,
       bottom: 0,

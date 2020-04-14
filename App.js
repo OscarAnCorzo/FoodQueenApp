@@ -28,6 +28,7 @@ import EncaGeneral from './vistas/encaGeneral';
 import Login from './vistas/login';
 import Inicio from './vistas/inicio';
 
+
 const App = () => {
   return(
     <>
