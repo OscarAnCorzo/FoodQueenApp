@@ -23,29 +23,33 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import { Appbar, ToggleButton, Button } from 'react-native-paper';
-import EncaGeneral from './vistas/encaGeneral';
 import Login from './vistas/login';
 import Inicio from './vistas/inicio';
+import Prueba from './vistas/prueba';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+const Stack = createStackNavigator();
 
 const App = () => {
+  const forFade = ({ current, closing }) => ({
+    cardStyle: {
+      opacity: current.progress,
+    },
+  });
+
   return(
     <>
-      <StatusBar barStyle="dark-content" />
-      {/* encabezado*/}
-      <EncaGeneral/>
-      {/* cuerpo */}
-      <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.body}>
-        <Inicio/>
-      </ScrollView>
+    <StatusBar barStyle="dark-content" />
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{headerShown: false}}>
+        <Stack.Screen name="Home" component={Inicio}/>
+        <Stack.Screen name="Prueba" component={Prueba}/>
+        <Stack.Screen name="Login" component={Login} options={{ cardStyleInterpolator: forFade }}/>
+      </Stack.Navigator>
+    </NavigationContainer>
     </>
   );
 };
-const styles = StyleSheet.create({
-  body: {
-    backgroundColor: 'white',
-  },
-});
 
 export default App;

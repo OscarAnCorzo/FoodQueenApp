@@ -2,12 +2,13 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import { Appbar } from 'react-native-paper';
 
-const EncaGeneral = () => {
+
+const EncaGeneral = ({ navigation }) => {
    return (
-      <Appbar.Header style={styles.header}>
-         <Appbar.Action icon="menu" color={'#e39c0e'}/>
+      <Appbar.Header style={styles.header} >
+         <Appbar.Action icon="menu" color={'#e39c0e'} onPress={()=> navigation.navigate('Prueba')}/>
          <Appbar.Content title="FoodQueen" titleStyle={{textAlign:'center'}}/>
-         <Appbar.Action icon="login" color={'#e39c0e'}/>
+         <Appbar.Action icon="magnify" color={'#e39c0e'} onPress={()=> navigation.navigate('Login')}/>
       </Appbar.Header>
    );
 };

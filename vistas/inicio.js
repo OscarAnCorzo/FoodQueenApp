@@ -1,8 +1,11 @@
 import React, {useState} from 'react';
 import { StyleSheet,Text, View, Image, ScrollView, FlatList,Button } from 'react-native';
+import EncaGeneral from './encaGeneral';
 // import { Colors } from 'react-native/Libraries/NewAppScreen';
 import Swiper from 'react-native-swiper';
 import { Avatar  } from 'react-native-paper';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 function Producto({nombre,precio}){
    return(
@@ -57,31 +60,37 @@ class BloqueProductos extends React.Component{
    }
 }
 
-const Inicio = () => {
+const Inicio = ({navigation}) => {
    return (
       <>
-         <Swiper style={styles.wrapper} showsButtons autoplay loop={true} activeDotColor={'#fff'} nextButton={<Text style={{color:'#fff',fontSize:60}}>›</Text>} prevButton={<Text style={{color:'#fff',fontSize:60}}>‹</Text>}>
-            <View testID="uno" style={styles.slide1}>
-               <Image source={require('./../img/mediterranean-cuisine-2378758_640.jpg')}/>
-            </View>
-            <View testID="dos" style={styles.slide2}>
-               <Image source={require('./../img/hamburger-494706_640.jpg')}/>
-            </View>
-            <View testID="tres" style={styles.slide2}>
-               <Image source={require('./../img/pizza-3007395_640.jpg')}/>
-            </View>
-            <View testID="cuatro" style={styles.slide2}>
-               <Image source={require('./../img/bread-2796393_640.jpg')}/>
-            </View>
-         </Swiper>
-         <BloqueProductos productos={productos} titulo={'Recomendados'}/>
-         <BloqueProductos productos={productos} titulo={'Hamburguesas'}/>
-         <BloqueProductos productos={productos} titulo={'Pizzas'}/>
+         <EncaGeneral navigation={navigation}/>
+         <ScrollView contentInsetAdjustmentBehavior="automatic" style={styles.body}>
+            <Swiper style={styles.wrapper} showsButtons autoplay loop={true} activeDotColor={'#fff'} nextButton={<Text style={{color:'#fff',fontSize:60}}>›</Text>} prevButton={<Text style={{color:'#fff',fontSize:60}}>‹</Text>}>
+               <View testID="uno" style={styles.slide1}>
+                  <Image source={require('./../img/mediterranean-cuisine-2378758_640.jpg')}/>
+               </View>
+               <View testID="dos" style={styles.slide2}>
+                  <Image source={require('./../img/hamburger-494706_640.jpg')}/>
+               </View>
+               <View testID="tres" style={styles.slide2}>
+                  <Image source={require('./../img/pizza-3007395_640.jpg')}/>
+               </View>
+               <View testID="cuatro" style={styles.slide2}>
+                  <Image source={require('./../img/bread-2796393_640.jpg')}/>
+               </View>
+            </Swiper>
+            <BloqueProductos productos={productos} titulo={'Recomendados'}/>
+            <BloqueProductos productos={productos} titulo={'Hamburguesas'}/>
+            <BloqueProductos productos={productos} titulo={'Pizzas'}/>
+         </ScrollView>
       </>
    );
 }
 
 var styles = {
+   body: {
+      backgroundColor: 'white',
+    },
    wrapper: {
       height:350
    },
