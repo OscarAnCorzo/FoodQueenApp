@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Text,
   TouchableHighlight,
-  View,FlatList
+  View,FlatList,ToolbarAndroid
 } from "react-native";
 import SideMenu from 'react-native-side-menu';
 
@@ -15,6 +15,11 @@ import SideMenu from 'react-native-side-menu';
 class ContentView extends React.Component {
   render() {
     return (
+      <>
+      {/* <ToolbarAndroid
+        title="AwesomeApp"
+        actions={[{title: 'Settings', icon:"menu", show: 'always'}]}
+      /> */}
       <View >
         <Text >
           Welcome to React Native!
@@ -27,6 +32,7 @@ class ContentView extends React.Component {
           Cmd+Control+Z for dev menu
         </Text>
       </View>
+      </>
     );
   }
 }
@@ -37,7 +43,7 @@ export default class Prueba extends React.Component {
    }
   render() {
     return (
-      <SideMenu menu={<Text>Hola hp</Text>}>
+      <SideMenu>
         <ContentView/>
       </SideMenu>
     );

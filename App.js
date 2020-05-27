@@ -14,6 +14,7 @@ import {
   View,
   Text,
   StatusBar,
+  Dimensions
 } from 'react-native';
 
 import {
@@ -26,10 +27,13 @@ import {
 import Login from './vistas/login';
 import Inicio from './vistas/inicio';
 import Prueba from './vistas/prueba';
+import SideMenu from './vistas/sideMenu';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const App = () => {
   const forFade = ({ current, closing }) => ({
@@ -42,11 +46,11 @@ const App = () => {
     <>
     <StatusBar barStyle="dark-content" />
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerShown: false}}>
-        <Stack.Screen name="Home" component={Inicio}/>
-        <Stack.Screen name="Prueba" component={Prueba}/>
-        <Stack.Screen name="Login" component={Login} options={{ cardStyleInterpolator: forFade }}/>
-      </Stack.Navigator>
+      <Drawer.Navigator screenOptions={{headerShown: false}} drawerContent={props => <SideMenu/>} drawerStyle={{width: Dimensions.get('window').width - 100}}>
+        <Drawer.Screen name="Home" component={Inicio}/>
+        {/* <Drawer.Screen name="Prueba" component={SideMenu}/> */}
+        <Drawer.Screen name="Login" component={Login} options={{ cardStyleInterpolator: forFade }}/>
+      </Drawer.Navigator>
     </NavigationContainer>
     </>
   );

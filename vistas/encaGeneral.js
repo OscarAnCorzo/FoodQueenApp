@@ -6,7 +6,7 @@ import { Appbar } from 'react-native-paper';
 const EncaGeneral = ({ navigation }) => {
    return (
       <Appbar.Header style={styles.header} >
-         <Appbar.Action icon="menu" color={'#e39c0e'} onPress={()=> navigation.navigate('Prueba')}/>
+         <Appbar.Action icon="menu" color={'#e39c0e'} onPress={()=> navigation.openDrawer()}/>
          <Appbar.Content title="FoodQueen" titleStyle={{textAlign:'center'}}/>
          <Appbar.Action icon="magnify" color={'#e39c0e'} onPress={()=> navigation.navigate('Login')}/>
       </Appbar.Header>

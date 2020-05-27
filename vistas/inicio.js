@@ -97,20 +97,17 @@ var styles = {
    slide1: {
      flex: 1,
      justifyContent: 'center',
-     alignItems: 'center',
-     backgroundColor: '#9DD6EB'
+     alignItems: 'center'
    },
    slide2: {
      flex: 1,
      justifyContent: 'center',
-     alignItems: 'center',
-     backgroundColor: '#97CAE5'
+     alignItems: 'center'
    },
    slide3: {
      flex: 1,
      justifyContent: 'center',
-     alignItems: 'center',
-     backgroundColor: '#92BBD9'
+     alignItems: 'center'
    },
    text: {
      color: '#fff',
@@ -124,9 +121,7 @@ var styles = {
       fontWeight: 'bold',
       marginTop: 10
     },
-    scrollView: {
-      backgroundColor: '#f5f5f5',
-    },
+
     contenedorP:{
       marginLeft:15,
       width:110,

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import React, {Component} from 'react';
 // import styles from './SideMenu.style';
-// import {NavigationActions} from 'react-navigation';
-import {ScrollView, Text, View, Dimensions } from 'react-native';
+import {NavigationActions} from 'react-navigation';
+import {ScrollView, Text, View} from 'react-native';
 // import { StackNavigator } from 'react-navigation';
 
 class SideMenu extends Component {
@@ -68,8 +68,7 @@ export default SideMenu;
 const styles = {
    container: {
      paddingTop: 20,
-     flex: 1,
-     width: Dimensions.get('window').width - 120
+     flex: 1
    },
    navItemStyle: {
      padding: 10
