@@ -121,7 +121,6 @@ var styles = {
       fontWeight: 'bold',
       marginTop: 10
     },
-
     contenedorP:{
       marginLeft:15,
       width:110,
